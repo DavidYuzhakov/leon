@@ -17,7 +17,7 @@ export const Servers = () => {
         scrollTrigger: {
           trigger: '.serversItems',
           scrub: 1,
-          markers: true,
+          // markers: true,
           start: 'top 90%',
           end: 'center center',
         }
