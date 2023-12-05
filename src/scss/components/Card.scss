@@ -1,0 +1,168 @@
+.card {
+	width: 300px;
+	height: 210px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	box-shadow: 0px 15px 40px 0px rgba(0, 0, 0, 0.07);
+	transition: border-radius ease $tr;
+	border-radius: 20px;
+	background-color: $white;
+
+  transform: perspective(2500px);
+
+	@media all and (min-width: 390px) {
+		width: 323px;
+		height: 210px;
+	}
+
+	@media all and (min-width: $md) {
+		border-radius: 0;
+		width: 473px;
+		height: 288px;
+		clip-path: polygon( 0.00% 0.00%, 84.60% 0.00%, 100% 16.60%, 100% 99.80%, 90.00% 100%, 10.00% 100%, 0.00% 99.80%, 0.00% 10.00% );
+	}
+
+
+	@media all and (min-width: $lg) {
+		width: 400px;
+		height: 317px;
+	}
+
+
+	&.black {
+		.cardButton {
+			background-color: $black;
+			color: $white;
+
+			&:hover {
+				background-color: transparent;
+				color: $black;
+			}
+		}
+		@media all and (min-width: $lg) {
+			background-color: $black;
+			color: $white;
+			
+
+			.cardButton {
+				background-color: $accent;
+				border-color: $accent;
+				color: $white;
+				font-weight: $fw-bold;
+	
+				&:hover {
+					background-color: transparent;
+					color: $white;
+				}
+			}
+	
+			.cardTitle,
+			.cardPrice {
+				color: $white;
+				font-weight: $fw-bold;
+			}
+		}
+
+		.cardPrice {
+			span {
+				font-size: 22px;
+
+				@media all and (min-width: $lg) {
+					font-size: 36px;
+				}
+			}
+		}
+
+		.cardTitle {
+			background-color: rgb(206, 236, 206);
+
+			&::before {
+				background-color: $white;
+			}
+
+			@media all and (min-width: $lg) {
+				background-color: transparent;
+			}
+		}
+	}
+
+	.cardInner {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-end;
+		padding-bottom: 35px;
+
+		@media all and (min-width: $lg) {
+			padding-bottom: 55px;
+		}
+	}
+
+	.cardTitle,
+	.cardPrice {
+		display: inline-block;
+		color: #000;
+		text-align: center;
+		font-family: Gilroy;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 38px;
+		text-transform: uppercase;
+
+		@media all and (min-width: $md) {
+			font-size: 16px;
+		}
+
+		@media all and (min-width: $lg) {
+			font-size: 18px;
+		}
+	}
+
+	.cardTitle {
+		position: relative;
+		margin-bottom: 20px;
+		padding: 5px 15px;
+		background-color: $light-bg;
+		border-radius: 15px;
+
+		@media all and (min-width: $lg) {
+			padding: 0;
+			background-color: transparent;
+
+			&::before {
+				content: "";
+				width: 80%;
+				height: 2px;
+				display: block;
+				position: absolute;
+				top: 85%;
+				left: 50%;
+				background-color: $black;
+				transform: translateX(-50%);
+			}
+		}
+	}
+
+	.cardPrice {
+		text-transform: none;
+		margin-bottom: 7px;
+
+		span {
+			font-size: 22px;
+
+			@media all and (min-width: $lg) {
+				font-size: 26px;
+			}
+		}
+
+		@media all and (min-width: $lg) {
+			margin-bottom: 53px;
+		}
+	}
+}

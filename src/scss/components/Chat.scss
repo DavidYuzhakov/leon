@@ -1,0 +1,209 @@
+.chat {
+	background: linear-gradient(45deg, #f5cfff, #c59aba, #bacdf0, #afd8fa);
+	background-size: 400% 400%;
+	animation: gradient2 15s ease infinite;
+	transform: translate3d(0, 0, 0);
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 130px 0;
+
+	@keyframes gradient2 {
+		0% {
+			background-position: 0% 50%;
+		}
+
+		50% {
+			background-position: 100% 50%;
+		}
+
+		100% {
+			background-position: 0% 50%;
+		}
+	}
+
+	.chatWrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		.h4 {
+			color: $black;
+			margin-bottom: 50px;
+		}
+	}
+
+	.chatItems {
+		width: 100%;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 0 20px;
+
+		@media all and (min-width: $md) {
+			padding: 0 50px;
+		}
+
+		.chatScroll {
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+
+		.chatItemsBox {
+			display: flex;
+
+			.chatButton {
+				font-family: $ff;
+				font-weight: $fw-medium;
+				color: $white;
+				padding: 12px 20px;
+				text-transform: uppercase;
+				font-size: 18px;
+				margin-right: 20px;
+				border-radius: 20px;
+				background-color: green;
+
+				@media all and (min-width: $md) {
+					padding: 12px 45px;
+				}
+
+				&:last-child {
+					margin-right: 0;
+					background-color: purple;
+				}
+			}
+		}
+
+		.chatItem {
+			display: flex;
+			margin-bottom: 15px;
+
+			@media all and (min-width: $md) {
+				margin-bottom: 30px;
+			}
+
+			.chatItemInner {
+				padding: 15px;
+				background-color: $accent;
+				font-family: $ff;
+				font-size: 16px;
+				color: $white;
+				border-top-left-radius: 50px;
+				border-bottom-left-radius: 10px;
+				border-bottom-right-radius: 40px;
+				border-top-right-radius: 40px;
+
+				@media all and (min-width: $md) {
+					font-size: 20px;
+					padding: 20px;
+				}
+			}
+
+			&:nth-child(4) {
+				justify-content: flex-end;
+
+				.chatItemInner {
+					border-top-left-radius: 50px;
+					border-bottom-left-radius: 40px;
+					border-bottom-right-radius: 10px;
+					border-top-right-radius: 40px;
+					border: 2px solid $accent;
+					background-color: $white;
+					color: $accent;
+					font-weight: $fw-bold;
+				}
+			}
+		}
+	}
+
+	.chatInputWrapper {
+		width: 100%;
+
+		@media all and (min-width: $sm) {
+			padding: 0 10px;
+		}
+
+		@media all and (min-width: $md) {
+			padding: 0 50px;
+		}
+	}
+
+	.chatInput {
+		width: 100%;
+		margin-top: 30px;
+		padding: 12px 0 12px 12px;
+		border-radius: 20px;
+		display: flex;
+		background-color: $white;
+		border: 1px solid $grey;
+		height: 51px;
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: 20px;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 1px;
+			height: 50%;
+			background-color: $black;
+			animation: cursor $tr linear infinite alternate-reverse;
+
+			@keyframes cursor {
+				0% {
+					opacity: 0;
+				}
+
+				100% {
+					opacity: 1;
+				}
+			}
+
+			@media all and (min-width: $md) {
+				left: 40px;
+			}
+		}
+
+		&::after {
+			content: "Например, Иван";
+			font-family: $ff;
+			opacity: 0.5;
+			font-size: 12px;
+			position: absolute;
+			left: 50px;
+			top: 50%;
+			transform: translateY(-50%);
+
+			@media all and (min-width: $md) {
+				font-size: 18px;
+				left: 100px;
+			}
+		}
+
+		.chatSend {
+			position: absolute;
+			top: 0;
+			right: 0;
+			border-radius: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-family: $ff;
+			font-size: 14px;
+			color: $white;
+			background-color: $dark;
+			width: 110px;
+			height: 51px;
+
+			@media all and (min-width: $md) {
+				width: 150px;
+				font-size: 18px;
+			}
+		}
+	}
+}

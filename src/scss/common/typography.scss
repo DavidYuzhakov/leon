@@ -1,0 +1,109 @@
+@import './vars';
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+	font-family: $ff;
+	font-weight: $fw-bold;
+	line-height: $lh-title;
+	margin: 0;
+}
+
+h1, .h1 {
+	color: $black-gentle;
+	font-family: $ff;
+	font-size: 40px;
+	font-style: normal;
+	font-weight: $fw-bold;
+	line-height: normal;
+	text-align: center;
+
+	@media all and (min-width: 390px) {
+		font-size: 50px;
+	}
+
+	@media all and (min-width: $md) {
+		font-size: 70px;
+	}
+
+	@media all and (min-width: $lg) {
+		font-size: 100px;
+	}
+
+	span {
+		color: $accent;
+	}
+}
+
+h2, .h2 {
+	color: $white;
+	text-align: center;
+	font-family: $ff;
+	font-size: 40px;
+	font-style: normal;
+	font-weight: $fw-semibold;
+	line-height: 45px;
+
+	@media all and (min-width: $md) {
+		font-size: 60px;
+	}
+
+	@media all and (min-width: $lg) {
+		font-size: 65px;
+		line-height: 65px;
+	}
+
+	span {
+		color: $accent;
+	}
+}
+
+h3, .h3 {
+	color: $black;
+	font-family: $ff;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: $fw-medium;
+	line-height: 30px;
+	text-align: center;
+
+	@media all and (min-width: $lg) {
+		font-size: 20px;
+	}
+}
+
+h4, .h4 {
+	font-size: 20px;
+	font-family: $ff;
+	font-weight: $fw-semibold;
+	line-height: $lh-title;
+
+	@media all and (min-width: $lg) {
+		font-size: 35px;
+	}
+}
+
+a {
+	display: inline-block;
+	text-decoration: none;
+	transition: opacity ease-out $tr;
+
+	&:hover {
+		opacity: $op;
+	}
+}
+
+p {
+	margin-top: 0;
+
+	&:last-of-type {
+		margin-bottom: 0
+	}
+}
+
+b, strong {
+	font-weight: $fw-bold
+}

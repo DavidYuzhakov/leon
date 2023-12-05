@@ -1,0 +1,68 @@
+.servers {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 100px 0 60px;
+
+	.serversWrapper {
+		max-height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.h2 {
+		color: $black;
+	}
+
+	.h3 {
+		margin-bottom: 71px;
+	}
+
+	.serversItems {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin-top: 71px;
+
+		@media all and (min-width: $lg) {
+			flex-direction: row;
+			align-items: flex-start;
+		}
+
+		.card {
+			margin-bottom: 22px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			@media all and (min-width: $lg) {
+				margin-right: 93px;
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.overlay {
+	background: linear-gradient(45deg, #f5cfff, #c59aba, #bacdf0, #afd8fa);
+	background-size: 400% 400%;
+	animation: gradient2 15s ease infinite;
+	transform: translate3d(0, 0, 0);
+
+	@keyframes gradient2 {
+		0% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+		100% {
+			background-position: 0% 50%;
+		}
+	}
+}

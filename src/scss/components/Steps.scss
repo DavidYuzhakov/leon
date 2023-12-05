@@ -1,0 +1,188 @@
+.steps {
+	background: linear-gradient(45deg, #f5cfff, #c59aba, #bacdf0, #afd8fa);
+	background-size: 400% 400%;
+	animation: gradient2 15s ease infinite;
+	transform: translate3d(0, 0, 0);
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 100px 0 60px;
+
+	@keyframes gradient2 {
+		0% {
+			background-position: 0% 50%;
+		}
+
+		50% {
+			background-position: 100% 50%;
+		}
+
+		100% {
+			background-position: 0% 50%;
+		}
+	}
+
+	.stepsWrapper {
+		max-height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.h2 {
+			color: $black;
+			margin-bottom: 10px;
+		}
+	}
+
+	.stepsItems {
+		width: 100%;
+		max-width: 800px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+
+		@media all and (min-width: $lg) {
+			flex-direction: row;
+			margin-bottom: 92px;
+		}
+
+		.animArrows {
+			display: none;
+
+			@media all and (min-width: $lg) {
+				display: flex;
+			}
+		}
+
+		.numArrow {
+			position: absolute;
+
+			@media all and (min-width: $lg) {
+				display: none;
+			}
+		}
+
+		.stepItem {
+			display: flex;
+			align-items: center;
+			position: relative;
+
+			&:first-child {
+				.stepItemTitle {
+					top: 50%;
+					transform: translateY(-50%);
+					right: -100px;
+				}
+
+				.numArrow {
+					top: 210px;
+					right: -100px;
+				}
+			}
+
+			&:nth-child(2) {
+				.stepItemTitle {
+					top: 50%;
+					transform: translateY(-50%);
+					left: -100px;
+				}
+
+				.numArrow {
+					top: 210px;
+					left: -100px;
+					transform: scaleX(-1);
+				}
+			}
+
+			&:last-child {
+				.stepItemTitle {
+					top: 50%;
+					transform: translateY(-50%);
+					right: -120px;
+				}
+			}
+		}
+
+		.stepItemInner {
+			display: flex;
+			align-items: center;
+
+			@media all and (min-width: $lg) {
+				flex-direction: column;
+			}
+		}
+
+		.stepItemNum {
+			color: transparent;
+			-webkit-text-stroke: 2px $accent; /* Добавляем обводку с помощью -webkit-text-stroke */
+			stroke: 2px $accent;
+			font-size: 120px;
+
+			@media all and (min-width: 390px) {
+				font-size: 170px;
+			}
+
+			@media all and (min-width: $lg) {
+				color: $accent;
+				font-family: $ff;
+				font-size: 140px;
+				font-style: normal;
+				font-weight: $fw-semibold;
+			}
+		}
+
+		.stepItemTitle {
+			color: $black;
+			font-family: $ff;
+			font-size: 24px;
+			font-style: normal;
+			font-weight: $fw-bold;
+			line-height: 30px;
+			position: absolute;
+
+			@media all and (min-width: $lg) {
+				margin-bottom: 10px;
+				position: static;
+			}
+		}
+
+		.stepItemDesc {
+			display: none;
+			color: $dark;
+			font-family: $ff;
+			font-size: 20px;
+			font-style: normal;
+			font-weight: $fw-medium;
+			line-height: 30px;
+
+			@media all and (min-width: $lg) {
+				display: block;
+			}
+		}
+	}
+
+	.stepsNotify {
+		color: $black;
+		font-family: $ff;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: $fw-bold;
+		line-height: normal;
+		margin-top: 20px;
+		display: none;
+
+		@media all and (min-width: $lg) {
+			display: block;
+		}
+	}
+
+	.button {
+		display: none;
+
+		@media all and (min-width: $lg) {
+			display: flex;
+		}
+	}
+}

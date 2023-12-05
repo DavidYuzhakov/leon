@@ -1,0 +1,112 @@
+.safe {
+	background-color: #19171C;
+	padding: 130px 0;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: -3px;
+		left: 0;
+		width: 100%;
+		height: 10px;
+		background: linear-gradient(to bottom, transparent, rgb(77, 77, 77), rgb(255, 255, 255), transparent);
+		pointer-events: none;
+		z-index: 100;
+	}
+
+	.button {
+		display: none;
+		margin-top: 27px;
+		background-color: $dark;
+		color: $white;
+
+		&:hover {
+			background-color: $white;
+			color: $black;
+		}
+
+		@media all and (min-width: $lg) {
+			display: flex;
+			margin-top: 65px;
+			background-color: transparent;
+			border: 2px solid $white;
+			color: $white;
+	
+			&:hover {
+				background-color: $white;
+				color: $black;
+			}
+		}
+
+		&.mobileButton {
+			display: flex;
+
+			@media all and (min-width: $lg) {
+				display: none;
+			}
+		}
+	}
+
+	.quickInfo {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		@media all and (min-width: $lg) {
+			align-items: flex-start;
+			width: 57%;
+		}
+	}
+
+	.safeWrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		max-height: 100%;
+
+		@media all and (min-width: $lg) {
+			flex-direction: row;
+			align-items: center;
+		}
+	}
+}
+
+.safeImg {
+	width: 300px;
+	height: 300px;
+
+	@media all and (min-width: 390px) {
+		width: 350px;
+		height: 350px;
+	}
+
+	@media all and (min-width: $md) {
+		width: 486px;
+		height: 486px;
+	}
+
+	img {
+		background: #19171C;
+		filter: grayscale(50%);
+		filter: grayscale(100%);
+		mix-blend-mode: lighten;
+
+		animation: changeFilter 3s infinite linear alternate-reverse;
+
+		@keyframes changeFilter {
+			0% {
+				filter: grayscale(100%);
+			}
+
+			100% {
+				filter: grayscale(0%);
+			}
+		}
+	}
+}

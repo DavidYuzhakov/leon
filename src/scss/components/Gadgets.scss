@@ -1,0 +1,81 @@
+.gadgets {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 70px 0 60px;
+
+	.gadgetsWrapper {
+		max-height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+
+		@media all and (min-width: $lg) {
+			margin-left: 0;
+			width: 100%;
+		}
+	}
+
+	.h2 {
+		color: $black;
+	}
+
+	.gadgetItems {
+		margin-top: 70px;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		padding: 0 10px;
+
+		@media all and (min-width: $lg) {
+			padding: 0;
+		}
+	}
+}
+
+.gadget {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 380px;
+
+	@media all and (min-width: $lg) {
+		margin-right: 0;
+	}
+}
+
+.gadgetName {
+	color: $black;
+	font-family: $ff;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: $fw-semibold;
+	line-height: normal;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.gadgetImg {
+	width: 250px;
+	height: 250px;
+
+	@media all and (min-width: $md) {
+		width: 275px;
+		height: 275px;
+	}
+
+	@media all and (min-width: $lg) {
+		width: 325px;
+		height: 325px;
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+}

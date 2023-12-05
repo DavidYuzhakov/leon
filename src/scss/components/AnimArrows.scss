@@ -1,0 +1,62 @@
+.animArrows {
+	display: flex;
+	align-items: center;
+
+	svg {
+		margin-right: 9px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+.arrowFirst {
+	path {
+		animation: colorChange1 0.5s linear infinite alternate;
+
+		@keyframes colorChange1 {
+			0% {
+				fill: #000000;
+			}
+		
+			100% {
+				fill: #414141;;
+			}
+		}
+	}
+}
+
+.arrowSecond {
+	path {
+		animation: colorChange2 0.5s linear infinite alternate;
+
+		@keyframes colorChange2 {
+			0% {
+				fill: #000000;
+			}
+		
+			100% {
+				fill: #6F6B75;;
+			}
+		}
+	}
+}
+
+.arrowThird {
+	path {
+		animation: colorChange3 0.5s linear infinite alternate;
+		animation-delay: 0.5s;
+
+		@keyframes colorChange3 {
+			0% {
+				fill: #6F6B75;
+			}
+		
+			100% {
+				fill: #B8B2C0;;
+			}
+		}
+	}
+}
+
